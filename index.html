@@ -272,10 +272,16 @@ nav button:hover,nav button.active{color:var(--green);border-color:var(--green);
 .knockout-review-top{padding:12px 14px 10px;background:linear-gradient(90deg,rgba(252,231,243,.85),rgba(255,255,255,.65));display:flex;justify-content:space-between;gap:8px;font-size:.74rem;color:var(--muted)}
 .knockout-review-body{padding:14px}
 .knockout-teams{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px}
-.knockout-team-name{font-weight:800;font-size:.95rem;display:inline-flex;align-items:center;gap:6px}
-.knockout-scorebox{text-align:center;min-width:96px}
-.knockout-scorebox .actual{font-size:1.75rem;font-weight:900;color:#831843;line-height:1.1}
-.knockout-scorebox .pred{font-size:.8rem;color:var(--muted);margin-top:6px}
+.knockout-team-panel{flex:1;min-width:0;background:linear-gradient(180deg,rgba(252,231,243,.55),rgba(255,255,255,.95));border:1px solid var(--border);border-radius:14px;padding:12px 10px;text-align:center}
+.knockout-team-panel .team-flag{font-size:2rem;line-height:1}
+.knockout-team-panel .team-name{font-weight:800;font-size:.95rem;margin-top:8px}
+.knockout-team-panel .team-prob{font-size:.78rem;color:var(--muted);margin-top:6px}
+.knockout-scorebox{text-align:center;min-width:124px}
+.knockout-score-stack{background:linear-gradient(135deg,#fff,#fdf2f8);border:1px solid var(--border);border-radius:14px;padding:10px 12px;box-shadow:inset 0 1px 0 rgba(255,255,255,.7)}
+.knockout-score-main{font-size:2rem;font-weight:900;color:#831843;line-height:1.05;letter-spacing:1px}
+.knockout-score-sub{font-size:.68rem;color:var(--muted);margin-top:4px}
+.knockout-score-pred{font-size:.82rem;color:#9d174d;font-weight:700;margin-top:7px}
+.knockout-scorebox .pred{font-size:.76rem;color:var(--muted);margin-top:6px;line-height:1.5}
 .knockout-scorebox .pred-label{font-size:.68rem;color:var(--muted);margin-top:2px}
 .knockout-status{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border-radius:999px;font-size:.72rem;font-weight:800}
 .knockout-status.exact{background:rgba(236,72,153,.18);border:1px solid rgba(236,72,153,.3);color:#9d174d}
@@ -288,6 +294,14 @@ nav button:hover,nav button.active{color:var(--green);border-color:var(--green);
 .knockout-hit-banner.miss{background:rgba(244,63,94,.14);color:#9f1239;border:1px solid rgba(244,63,94,.24)}
 .knockout-meta{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
 .knockout-meta span{font-size:.72rem;color:var(--muted);padding:4px 8px;border-radius:999px;background:rgba(252,231,243,.75);border:1px solid var(--border)}
+.knockout-top3-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:10px 0 4px}
+.knockout-top3-row .top3-label{font-size:.72rem;color:var(--muted)}
+.knockout-top3-badge{display:inline-flex;align-items:center;gap:5px;padding:5px 10px;border-radius:10px;background:rgba(252,231,243,.75);border:1px solid var(--border);font-size:.74rem}
+.knockout-top3-badge b{font-size:.88rem;color:#9d174d}
+.knockout-top3-badge em{font-style:normal;color:var(--muted);font-size:.68rem}
+.knockout-top3-badge.top1{background:rgba(236,72,153,.18);border-color:rgba(236,72,153,.3)}
+.knockout-top3-badge.top2{background:rgba(252,211,77,.18);border-color:rgba(252,211,77,.35)}
+.knockout-top3-badge.top3{background:rgba(167,139,250,.12);border-color:rgba(167,139,250,.24)}
 .knockout-analysis{font-size:.82rem;line-height:1.65;color:#831843;margin-top:8px}
 .knockout-analysis strong{color:#9d174d}
 .knockout-summary-note{font-size:.78rem;color:var(--muted);line-height:1.6;margin-top:10px}
@@ -308,7 +322,8 @@ nav{justify-content:center}
 .groups-grid{grid-template-columns:1fr}
 .teams-grid{grid-template-columns:1fr}
 .knockout-teams{flex-direction:column}
-.knockout-scorebox{min-width:auto}
+.knockout-scorebox{min-width:auto;width:100%}
+.knockout-team-panel{width:100%}
 }
 
 /* Loading */
@@ -2200,17 +2215,30 @@ const completedCards = completed.map(m => `
   </div>
   <div class="knockout-review-body">
     <div class="knockout-teams">
-      <div class="knockout-team-name">${flagHTML(m.a)} ${m.a}</div>
-      <div class="knockout-scorebox">
-        <div class="actual">${m.score}</div>
-        <div class="pred-label">实际比分</div>
-        <div class="pred">AI预测: ${m.pred.predictedScore}</div>
+      <div class="knockout-team-panel">
+        <div class="team-flag">${flagHTML(m.a)}</div>
+        <div class="team-name">${m.a}</div>
+        <div class="team-prob">AI 胜率 ${m.pred.teamA.winProb}%</div>
       </div>
-      <div class="knockout-team-name">${m.b} ${flagHTML(m.b)}</div>
+      <div class="knockout-scorebox">
+        <div class="knockout-score-stack">
+          <div class="knockout-score-main">${m.score}</div>
+          <div class="knockout-score-sub">实际比分</div>
+          <div class="knockout-score-pred">AI预测: ${m.pred.predictedScore}</div>
+        </div>
+      </div>
+      <div class="knockout-team-panel">
+        <div class="team-flag">${flagHTML(m.b)}</div>
+        <div class="team-name">${m.b}</div>
+        <div class="team-prob">AI 胜率 ${m.pred.teamB.winProb}%</div>
+      </div>
     </div>
     <div class="knockout-hit-banner ${m.statusClass}">${m.hitBanner}</div>
+    <div class="knockout-top3-row">
+      <span class="top3-label">Top-3 候选比分</span>
+      ${m.pred.topScores.map((s, i) => `<span class="knockout-top3-badge top${i+1}"><b>${s.score}</b><em>${s.percent}%</em></span>`).join('')}
+    </div>
     <div class="knockout-meta">
-      <span>Top-3: ${m.pred.topScores.map(s => s.score).join(' / ')}</span>
       <span>方向置信度: ${m.pred.confidence}</span>
       <span>比分自信度: ${m.pred.scoreConfidence.label} ${m.pred.scoreConfidence.percent}%</span>
       <span>${m.top3Hit ? '实际比分在 Top-3 内' : '实际比分未进 Top-3'}</span>
@@ -2227,19 +2255,32 @@ const pendingCards = pending.map(m => `
   </div>
   <div class="knockout-review-body">
     <div class="knockout-teams">
-      <div class="knockout-team-name">${flagHTML(m.a)} ${m.a}</div>
-      <div class="knockout-scorebox">
-        <div class="actual" style="font-size:1.35rem">${m.pred.predictedScore}</div>
-        <div class="pred-label">AI预测比分</div>
-        <div class="pred">${m.a} ${m.pred.teamA.winProb}% · 平 ${m.pred.draw}% · ${m.b} ${m.pred.teamB.winProb}%</div>
+      <div class="knockout-team-panel">
+        <div class="team-flag">${flagHTML(m.a)}</div>
+        <div class="team-name">${m.a}</div>
+        <div class="team-prob">AI 胜率 ${m.pred.teamA.winProb}%</div>
       </div>
-      <div class="knockout-team-name">${m.b} ${flagHTML(m.b)}</div>
+      <div class="knockout-scorebox">
+        <div class="knockout-score-stack">
+          <div class="knockout-score-main" style="font-size:1.55rem">${m.pred.predictedScore}</div>
+          <div class="knockout-score-sub">AI预测比分</div>
+          <div class="knockout-score-pred">${m.a} ${m.pred.teamA.winProb}% · 平 ${m.pred.draw}% · ${m.b} ${m.pred.teamB.winProb}%</div>
+        </div>
+      </div>
+      <div class="knockout-team-panel">
+        <div class="team-flag">${flagHTML(m.b)}</div>
+        <div class="team-name">${m.b}</div>
+        <div class="team-prob">AI 胜率 ${m.pred.teamB.winProb}%</div>
+      </div>
+    </div>
+    <div class="knockout-top3-row">
+      <span class="top3-label">Top-3 候选比分</span>
+      ${m.pred.topScores.map((s, i) => `<span class="knockout-top3-badge top${i+1}"><b>${s.score}</b><em>${s.percent}%</em></span>`).join('')}
     </div>
     <div class="knockout-meta">
       <span>${m.a} 胜率 ${m.pred.teamA.winProb}%</span>
       <span>平局概率 ${m.pred.draw}%</span>
       <span>${m.b} 胜率 ${m.pred.teamB.winProb}%</span>
-      <span>Top-3: ${m.pred.topScores.map(s => s.score).join(' / ')}</span>
     </div>
     <div class="knockout-analysis">${m.analysis}<br><strong>关键因素：</strong>${m.pred.keyFactors.slice(0,3).join(' / ')}</div>
   </div>
