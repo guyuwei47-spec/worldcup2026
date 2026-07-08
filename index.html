@@ -305,6 +305,27 @@ nav button:hover,nav button.active{color:var(--green);border-color:var(--green);
 .knockout-analysis{font-size:.82rem;line-height:1.65;color:#831843;margin-top:8px}
 .knockout-analysis strong{color:#9d174d}
 .knockout-summary-note{font-size:.78rem;color:var(--muted);line-height:1.6;margin-top:10px}
+.knockout-accuracy-board{margin-top:14px;background:#fff;border:1px solid var(--border);border-radius:16px;padding:16px}
+.knockout-accuracy-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.knockout-accuracy-head .title{font-size:.96rem;font-weight:800;color:#9d174d}
+.knockout-accuracy-head .desc{font-size:.75rem;color:var(--muted);line-height:1.6;margin-top:4px;max-width:620px}
+.knockout-accuracy-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}
+.knockout-accuracy-card{background:linear-gradient(180deg,rgba(252,231,243,.55),#fff);border:1px solid var(--border);border-radius:14px;padding:14px}
+.knockout-accuracy-card .ka-label{font-size:.72rem;color:var(--muted)}
+.knockout-accuracy-card .ka-value{font-size:1.55rem;font-weight:900;color:#831843;margin-top:6px}
+.knockout-accuracy-card .ka-sub{font-size:.73rem;color:var(--muted);margin-top:5px;line-height:1.5}
+.knockout-accuracy-bar{height:8px;background:rgba(252,231,243,.9);border-radius:999px;overflow:hidden;margin-top:10px}
+.knockout-accuracy-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--green),var(--purple))}
+.knockout-accuracy-fill.exact{background:linear-gradient(90deg,#fbbf24,#f59e0b)}
+.knockout-accuracy-fill.top3{background:linear-gradient(90deg,#a78bfa,#c084fc)}
+.knockout-accuracy-foot{margin-top:12px;padding:10px 12px;background:rgba(252,231,243,.7);border:1px dashed var(--pink);border-radius:12px;font-size:.75rem;color:var(--muted);line-height:1.65}
+.knockout-case-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px;margin-top:12px}
+.knockout-case{border-radius:12px;padding:12px 13px;border:1px solid var(--border);background:#fff}
+.knockout-case.good{background:linear-gradient(180deg,rgba(167,139,250,.09),#fff)}
+.knockout-case.bad{background:linear-gradient(180deg,rgba(244,63,94,.08),#fff)}
+.knockout-case .kc-label{font-size:.7rem;color:var(--muted)}
+.knockout-case .kc-match{font-size:.88rem;font-weight:800;color:#831843;margin-top:4px}
+.knockout-case .kc-body{font-size:.75rem;color:var(--muted);line-height:1.6;margin-top:6px}
 .knockout-insight-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
 .knockout-insight-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:14px}
 .knockout-insight-card .ki-title{font-size:.8rem;font-weight:800;color:#9d174d}
@@ -360,7 +381,7 @@ nav{justify-content:center}
 <h2 style="font-size:1.35rem;margin-bottom:8px">🔥 淘汰赛中心</h2>
 <p style="color:var(--muted);font-size:.86rem;line-height:1.7">从现在开始，页面默认先看淘汰赛：先给你真实赛果进度，再给你 AI 预测路径。小组赛的 72 场历史数据我已经收到下面的折叠区里，想复盘时再展开看。</p>
 <div class="knockout-mini-stats">
-<div class="knockout-mini-card"><div class="k-label">已结束 1/8 决赛</div><div class="k-val">6 场</div></div>
+<div class="knockout-mini-card"><div class="k-label">已结束 1/8 决赛</div><div class="k-val">8 场</div></div>
 <div class="knockout-mini-card"><div class="k-label">今天待赛</div><div class="k-val">0 场</div></div>
 <div class="knockout-mini-card"><div class="k-label">最新更新</div><div class="k-val" style="font-size:1.1rem">2026-07-08</div></div>
 </div>
@@ -392,6 +413,51 @@ nav{justify-content:center}
 </div>
 
 <div class="knockout-rich-block">
+  <h3>📊 AI 预测准确率</h3>
+  <div class="knockout-accuracy-board">
+    <div class="knockout-accuracy-head">
+      <div>
+        <div class="title">淘汰赛阶段先看方向，再看比分</div>
+        <div class="desc">口径和小组赛保持一致：先统计胜负方向是否判断正确，再看主预测比分是否直接命中，最后看真实比分有没有进入 AI 的 Top-3 候选。</div>
+      </div>
+    </div>
+    <div class="knockout-accuracy-grid">
+      <div class="knockout-accuracy-card">
+        <div class="ka-label">胜负方向命中率</div>
+        <div class="ka-value">75%</div>
+        <div class="ka-sub">6 / 8 场方向判断正确</div>
+        <div class="knockout-accuracy-bar"><div class="knockout-accuracy-fill" style="width:75%"></div></div>
+      </div>
+      <div class="knockout-accuracy-card">
+        <div class="ka-label">比分完全命中率</div>
+        <div class="ka-value">0%</div>
+        <div class="ka-sub">8 场里暂时还没有主预测比分直接压中</div>
+        <div class="knockout-accuracy-bar"><div class="knockout-accuracy-fill exact" style="width:6%"></div></div>
+      </div>
+      <div class="knockout-accuracy-card">
+        <div class="ka-label">Top-3 比分命中率</div>
+        <div class="ka-value">25%</div>
+        <div class="ka-sub">2 / 8 场真实比分进入候选集</div>
+        <div class="knockout-accuracy-bar"><div class="knockout-accuracy-fill top3" style="width:25%"></div></div>
+      </div>
+    </div>
+    <div class="knockout-case-row">
+      <div class="knockout-case good">
+        <div class="kc-label">相对最准的两场</div>
+        <div class="kc-match">法国 1-0 巴拉圭、西班牙 1-0 葡萄牙</div>
+        <div class="kc-body">这两场虽然主比分没直接压中，但真实比分都进入了 AI 的 Top-3 候选，说明模型对强强弱弱结构和节奏判断相对更稳。</div>
+      </div>
+      <div class="knockout-case bad">
+        <div class="kc-label">典型翻车样本</div>
+        <div class="kc-match">挪威 2-1 巴西、瑞士点球淘汰哥伦比亚</div>
+        <div class="kc-body">前者是高估豪门、低估临场冲击；后者则是五五开比赛进入点球后，常规比分模型天然吃亏。</div>
+      </div>
+    </div>
+    <div class="knockout-accuracy-foot">结论很直接：现在这套模型在淘汰赛里“判断谁更可能晋级”还可以，但一到具体比分和极端赛况，误差会明显放大。</div>
+  </div>
+</div>
+
+<div class="knockout-rich-block">
   <h3>🧾 淘汰赛逐场复盘</h3>
   <div class="knockout-review-grid">
     <div class="knockout-review-card">
@@ -399,10 +465,10 @@ nav{justify-content:center}
       <div class="knockout-review-body">
         <div class="knockout-teams">
           <div class="knockout-team-name">🇲🇦 摩洛哥</div>
-          <div class="knockout-scorebox"><div class="actual">3-0</div><div class="pred">AI预测: 2-0</div></div>
+          <div class="knockout-scorebox"><div class="actual">3-0</div><div class="pred">AI预测: 1-1</div></div>
           <div class="knockout-team-name">加拿大 🇨🇦</div>
         </div>
-        <div class="knockout-analysis">AI 方向和比分都比较接近。摩洛哥这场兑现了整体强度优势，加拿大没能把反击效率转成进球。</div>
+        <div class="knockout-analysis">模型最后还是更偏向摩洛哥晋级，但主比分明显偏保守。实际比赛比 AI 设想更开放，摩洛哥把转换效率兑现成了 3 球。</div>
       </div>
     </div>
     <div class="knockout-review-card">
@@ -421,21 +487,21 @@ nav{justify-content:center}
       <div class="knockout-review-body">
         <div class="knockout-teams">
           <div class="knockout-team-name">🏴 英格兰</div>
-          <div class="knockout-scorebox"><div class="actual">3-2</div><div class="pred">AI预测: 2-1</div></div>
+          <div class="knockout-scorebox"><div class="actual">3-2</div><div class="pred">AI预测: 1-0</div></div>
           <div class="knockout-team-name">墨西哥 🇲🇽</div>
         </div>
-        <div class="knockout-analysis">AI 方向判断正确，但低估了进球波动。英格兰虽然晋级，但比赛比预期更开放、节奏更快。</div>
+        <div class="knockout-analysis">AI 方向判断正确，但把这场想得太“低配速”了。实际比赛在落后和追分阶段被完全拉开，进球波动远超模型预期。</div>
       </div>
     </div>
     <div class="knockout-review-card">
-      <div class="knockout-review-top"><span>7月6日 · 1/8决赛</span><span class="knockout-status miss">爆冷</span></div>
+      <div class="knockout-review-top"><span>7月6日 · 1/8决赛</span><span class="knockout-status miss">翻车</span></div>
       <div class="knockout-review-body">
         <div class="knockout-teams">
           <div class="knockout-team-name">🇳🇴 挪威</div>
-          <div class="knockout-scorebox"><div class="actual">2-1</div><div class="pred">AI预测: 2-0</div></div>
+          <div class="knockout-scorebox"><div class="actual">2-1</div><div class="pred">AI预测: 1-1</div></div>
           <div class="knockout-team-name">巴西 🇧🇷</div>
         </div>
-        <div class="knockout-analysis">这场是典型翻车。模型高估了巴西的豪门底蕴，低估了挪威在单场淘汰赛里的冲击力和执行力。</div>
+        <div class="knockout-analysis">这是最典型的方向翻车之一。模型更相信巴西纸面实力，结果挪威把对抗强度和终结效率都打出来了，豪门权重被高估。</div>
       </div>
     </div>
     <div class="knockout-review-card">
@@ -454,10 +520,10 @@ nav{justify-content:center}
       <div class="knockout-review-body">
         <div class="knockout-teams">
           <div class="knockout-team-name">🇧🇪 比利时</div>
-          <div class="knockout-scorebox"><div class="actual">4-1</div><div class="pred">AI预测: 2-1</div></div>
+          <div class="knockout-scorebox"><div class="actual">4-1</div><div class="pred">AI预测: 1-1</div></div>
           <div class="knockout-team-name">美国 🇺🇸</div>
         </div>
-        <div class="knockout-analysis">AI 方向正确，但明显低估了进球数。比利时在转换和终结效率上把优势放大成了一场大胜。</div>
+        <div class="knockout-analysis">模型最终还是更偏向比利时，但对比赛开放度严重低估。比利时把前场效率和转换速度全都打满，直接从胶着局打成大胜。</div>
       </div>
     </div>
     <div class="knockout-review-card">
@@ -472,14 +538,14 @@ nav{justify-content:center}
       </div>
     </div>
     <div class="knockout-review-card">
-      <div class="knockout-review-top"><span>7月7日 · 1/8决赛</span><span class="knockout-status direction">点球晋级</span></div>
+      <div class="knockout-review-top"><span>7月7日 · 1/8决赛</span><span class="knockout-status miss">点球翻车</span></div>
       <div class="knockout-review-body">
         <div class="knockout-teams">
           <div class="knockout-team-name">🇨🇭 瑞士</div>
           <div class="knockout-scorebox"><div class="actual" style="font-size:1.35rem">0-0（点球4-3）</div><div class="pred">AI预测: 1-1</div></div>
           <div class="knockout-team-name">哥伦比亚 🇨🇴</div>
         </div>
-        <div class="knockout-analysis">AI 对这场的低比分、胶着走势判断是对的，但没法靠常规比分预测出点球结局。它更像“形状命中，终局偏差”。</div>
+        <div class="knockout-analysis">这场很能说明淘汰赛的模型边界：90 分钟低比分和胶着走势判断不算离谱，但一旦进入点球，常规比分模型对最终晋级方向就会天然失真。</div>
       </div>
     </div>
   </div>
@@ -491,17 +557,17 @@ nav{justify-content:center}
     <div class="knockout-insight-card">
       <div class="ki-title">高估传统强队</div>
       <div class="ki-count">重点观察</div>
-      <div class="ki-body">像巴西这种纸面实力很强的队，模型容易因为 Elo 和豪门底蕴给权过高，临场状态变化反应没那么快。</div>
+      <div class="ki-body">像巴西这种纸面实力很强的队，模型容易因为 Elo 和豪门底蕴给权过高，临场状态、对位克制和执行力变化反应没那么快。</div>
     </div>
     <div class="knockout-insight-card">
       <div class="ki-title">低估淘汰赛波动</div>
       <div class="ki-count">需要修正</div>
-      <div class="ki-body">淘汰赛一旦先丢球，比赛走势会比小组赛更极端，进球数和比赛节奏都更容易脱离常规模型。</div>
+      <div class="ki-body">淘汰赛一旦先丢球，比赛走势会比小组赛更极端，进球数、节奏和压上程度都更容易脱离常规模型。</div>
     </div>
     <div class="knockout-insight-card">
-      <div class="ki-title">淘汰赛策略变化</div>
+      <div class="ki-title">点球与五五开边界</div>
       <div class="ki-count">重点误差</div>
-      <div class="ki-body">像阿根廷逆转、瑞士点球晋级这种比赛，都说明淘汰赛的临场博弈和情绪波动比小组赛更容易打破静态预测。</div>
+      <div class="ki-body">像瑞士点球晋级这种比赛，说明常规时间的比分模型并不等于“晋级预测模型”；一旦进入点球，临场博弈和门将表现会迅速接管结果。</div>
     </div>
   </div>
 </div>
@@ -2196,6 +2262,11 @@ const played = completed.length;
 const directionHits = completed.filter(m => m.directionCorrect).length;
 const exactHits = completed.filter(m => m.exactHit).length;
 const top3Hits = completed.filter(m => m.top3Hit).length;
+const directionPct = played ? Math.round(directionHits/played*100) : 0;
+const exactPct = played ? Math.round(exactHits/played*100) : 0;
+const top3Pct = played ? Math.round(top3Hits/played*100) : 0;
+const bestCases = completed.filter(m => m.top3Hit).slice(0,2);
+const missCases = completed.filter(m => !m.directionCorrect).slice(0,2);
 const missMap = {
   favorite_overrated: { title:'高估传统强队', desc:'模型偏相信纸面名气、长期 Elo 和豪门底蕴，容易对临场下滑反应慢。', count:0 },
   under_goals: { title:'低估进球波动', desc:'淘汰赛一旦落后，比赛会被拉开，进球数比小组赛更容易失控。', count:0 },
@@ -2216,6 +2287,51 @@ const insightCards = Object.values(missMap)
     <div class="ki-count">${item.count} 场</div>
     <div class="ki-body">${item.desc}</div>
   </div>`).join('');
+const accuracyHtml = `
+<div class="knockout-rich-block">
+  <h3>📊 AI 预测准确率</h3>
+  <div class="knockout-accuracy-board">
+    <div class="knockout-accuracy-head">
+      <div>
+        <div class="title">淘汰赛阶段先看方向，再看比分</div>
+        <div class="desc">口径和小组赛保持一致：先统计胜负方向，再看主预测比分是否直接命中，最后看真实比分有没有进入 AI 的 Top-3 候选。</div>
+      </div>
+    </div>
+    <div class="knockout-accuracy-grid">
+      <div class="knockout-accuracy-card">
+        <div class="ka-label">胜负方向命中率</div>
+        <div class="ka-value">${directionPct}%</div>
+        <div class="ka-sub">${directionHits} / ${played} 场方向判断正确</div>
+        <div class="knockout-accuracy-bar"><div class="knockout-accuracy-fill" style="width:${directionPct}%"></div></div>
+      </div>
+      <div class="knockout-accuracy-card">
+        <div class="ka-label">比分完全命中率</div>
+        <div class="ka-value">${exactPct}%</div>
+        <div class="ka-sub">${exactHits ? `${exactHits} / ${played} 场主预测比分压中` : `目前 ${played} 场还没有直接压中主比分`}</div>
+        <div class="knockout-accuracy-bar"><div class="knockout-accuracy-fill exact" style="width:${Math.max(exactPct,6)}%"></div></div>
+      </div>
+      <div class="knockout-accuracy-card">
+        <div class="ka-label">Top-3 比分命中率</div>
+        <div class="ka-value">${top3Pct}%</div>
+        <div class="ka-sub">${top3Hits} / ${played} 场真实比分进入候选集</div>
+        <div class="knockout-accuracy-bar"><div class="knockout-accuracy-fill top3" style="width:${top3Pct}%"></div></div>
+      </div>
+    </div>
+    <div class="knockout-case-row">
+      <div class="knockout-case good">
+        <div class="kc-label">相对最准的样本</div>
+        <div class="kc-match">${bestCases.length ? bestCases.map(m => `${m.a} ${m.displayScore} ${m.b}`).join('、') : '暂未出现明显高光样本'}</div>
+        <div class="kc-body">${bestCases.length ? '这几场虽然主比分没直接命中，但真实比分进入了 AI 的 Top-3 候选，说明模型对比赛结构和节奏判断相对更接近。' : '目前更多还是方向判断正确，比分层面的精度还需要继续观察。'}</div>
+      </div>
+      <div class="knockout-case bad">
+        <div class="kc-label">典型翻车样本</div>
+        <div class="kc-match">${missCases.length ? missCases.map(m => `${m.a} ${m.displayScore} ${m.b}`).join('、') : '暂无方向翻车'}</div>
+        <div class="kc-body">${missCases.length ? '一个是高估传统强队，一个是五五开比赛进入点球后失去优势，基本把当前模型在淘汰赛最容易出错的两类场景都暴露出来了。' : '当前没有明显的方向性翻车，主要误差集中在比分层面。'}</div>
+      </div>
+    </div>
+    <div class="knockout-accuracy-foot">结论很直接：这套模型现在更擅长回答“谁更可能晋级”，还不够擅长回答“会以什么比分、什么方式晋级”。</div>
+  </div>
+</div>`;
 
 const completedCards = completed.map(m => `
 <div class="knockout-review-card">
@@ -2307,17 +2423,17 @@ return `
     </div>
     <div class="knockout-overview-card">
       <div class="ko-label">胜负方向命中率</div>
-      <div class="ko-value">${played ? Math.round(directionHits/played*100) : 0}%</div>
+      <div class="ko-value">${directionPct}%</div>
       <div class="ko-sub">${directionHits} / ${played} 场方向判断正确</div>
     </div>
     <div class="knockout-overview-card">
       <div class="ko-label">比分完全命中率</div>
-      <div class="ko-value">${played ? Math.round(exactHits/played*100) : 0}%</div>
+      <div class="ko-value">${exactPct}%</div>
       <div class="ko-sub">${exactHits} / ${played} 场主预测比分压中</div>
     </div>
     <div class="knockout-overview-card">
       <div class="ko-label">Top-3 比分命中率</div>
-      <div class="ko-value">${played ? Math.round(top3Hits/played*100) : 0}%</div>
+      <div class="ko-value">${top3Pct}%</div>
       <div class="ko-sub">${top3Hits} / ${played} 场实际比分进入候选集</div>
     </div>
     <div class="knockout-overview-card">
@@ -2328,6 +2444,7 @@ return `
   </div>
   <div class="knockout-summary-note">和小组赛一样，这里单独看三层命中：先看胜负方向，再看主比分是否压中，最后看真实比分有没有进入 AI 的 Top-3 候选。</div>
 </div>
+${accuracyHtml}
 <div class="knockout-rich-block">
   <h3>🧾 淘汰赛逐场复盘</h3>
   <div class="knockout-review-grid">${completedCards}${pendingCards}</div>
