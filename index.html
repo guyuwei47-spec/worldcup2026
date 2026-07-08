@@ -361,7 +361,7 @@ nav{justify-content:center}
 <p style="color:var(--muted);font-size:.86rem;line-height:1.7">从现在开始，页面默认先看淘汰赛：先给你真实赛果进度，再给你 AI 预测路径。小组赛的 72 场历史数据我已经收到下面的折叠区里，想复盘时再展开看。</p>
 <div class="knockout-mini-stats">
 <div class="knockout-mini-card"><div class="k-label">已结束 1/8 决赛</div><div class="k-val">6 场</div></div>
-<div class="knockout-mini-card"><div class="k-label">今天待赛</div><div class="k-val">2 场</div></div>
+<div class="knockout-mini-card"><div class="k-label">今天待赛</div><div class="k-val">0 场</div></div>
 <div class="knockout-mini-card"><div class="k-label">最新更新</div><div class="k-val" style="font-size:1.1rem">2026-07-07</div></div>
 </div>
 <div id="dashboard-knockout-live">
@@ -370,8 +370,8 @@ nav{justify-content:center}
   <div class="knockout-overview-grid">
     <div class="knockout-overview-card">
       <div class="ko-label">已复盘场次</div>
-      <div class="ko-value">6</div>
-      <div class="ko-sub">已结束的 1/8 决赛</div>
+      <div class="ko-value">8</div>
+      <div class="ko-sub">1/8 决赛已全部结束</div>
     </div>
     <div class="knockout-overview-card">
       <div class="ko-label">实时更新</div>
@@ -381,12 +381,12 @@ nav{justify-content:center}
     <div class="knockout-overview-card">
       <div class="ko-label">7 月 7 日比赛</div>
       <div class="ko-value">2 场</div>
-      <div class="ko-sub">阿根廷 vs 埃及、瑞士 vs 哥伦比亚</div>
+      <div class="ko-sub">已补入阿根廷 3-2 埃及、瑞士点球 4-3 哥伦比亚</div>
     </div>
     <div class="knockout-overview-card">
       <div class="ko-label">最新更新</div>
       <div class="ko-value">7/8</div>
-      <div class="ko-sub">静态页面也已同步到北京时间 2026-07-08 的最新口径</div>
+      <div class="ko-sub">静态页面已同步 7 月 7 日两场 1/8 决赛最终赛果</div>
     </div>
   </div>
 </div>
@@ -769,13 +769,13 @@ predictedScore = Top-1.score              // 主比分与 Top-1 对齐</pre>
 <p style="margin-top:8px">
 <span style="color:var(--green)">数据版本</span> v1.1 ·
 <span style="color:var(--green)">模型版本</span> v1.1-poisson-h2h-context ·
-<span style="color:var(--green)">最后更新</span> 2026-07-08
+<span style="color:var(--green)">最后更新</span> 2026-07-08（已补 7/7 两场 1/8 决赛）
 </p>
 <p style="margin-top:6px;font-size:.72rem;color:var(--muted);max-width:720px;margin-left:auto;margin-right:auto;line-height:1.6">
 模型说明：ELO 评分（来自 eloratings.net）权重 60% + 编辑主观评估（攻击/防守/近期状态）权重 40%，叠加确定性泊松期望进球推导最可能比分。所有预测确定性可复现，同一数据版本下刷新页面结果不变。AI 也会猜错——比赛打完后会在「AI 战绩看板」逐场标注对错。
 </p>
 <p style="margin-top:6px;font-size:.72rem;color:var(--muted);max-width:720px;margin-left:auto;margin-right:auto;line-height:1.6">
-比赛结果数据来源：FIFA 官方赛程 / 赛果页，并由公开赛果报道交叉核对。截至 2026-07-08（北京时间），已收录全部 72 场小组赛真实比分（6/11–6/28）与已结束的 6 场 1/8 决赛；7 月 7 日两场淘汰赛已补入最新可核状态，其中阿根廷 vs 埃及进入实时更新、瑞士 vs 哥伦比亚待最终赛果核定。FIFA Ranking 来自 2026 年 6 月榜单。
+比赛结果数据来源：FIFA 官方赛程 / 赛果页，并由公开赛果报道交叉核对。截至 2026-07-08（北京时间），已收录全部 72 场小组赛真实比分（6/11–6/28）与 8 场已结束的 1/8 决赛。其中阿根廷 3 比 2 埃及、瑞士 0 比 0 哥伦比亚（点球 4 比 3）已补入淘汰赛复盘。FIFA Ranking 来自 2026 年 6 月榜单。
 </p>
 <p style="margin-top:6px">基于 <a href="https://github.com/TradingAi666/worldcup2026-prediction-skill" target="_blank">worldcup2026-prediction-skill</a> 开源项目 · MIT License</p>
 <p style="margin-top:6px;color:var(--green)">✓ 真实数据：已结束比赛的比分与进球者均经多源核对（FIFA + Wikipedia + Sofascore），非演示数据</p>
@@ -1057,12 +1057,11 @@ completed: [
 {date:"7月6日", stage:"1/8决赛", a:"英格兰", b:"墨西哥", score:"3-2", note:"英格兰晋级"},
 {date:"7月6日", stage:"1/8决赛", a:"挪威", b:"巴西", score:"2-1", note:"哈兰德领军爆冷"},
 {date:"7月6日", stage:"1/8决赛", a:"西班牙", b:"葡萄牙", score:"1-0", note:"西班牙晋级"},
-{date:"7月6日", stage:"1/8决赛", a:"比利时", b:"美国", score:"4-1", note:"比利时晋级"}
+{date:"7月6日", stage:"1/8决赛", a:"比利时", b:"美国", score:"4-1", note:"比利时晋级"},
+{date:"7月7日", stage:"1/8决赛", a:"阿根廷", b:"埃及", score:"3-2", note:"阿根廷 0-2 落后完成超级逆转"},
+{date:"7月7日", stage:"1/8决赛", a:"瑞士", b:"哥伦比亚", score:"0-0", winner:"A", shootout:"4-3", note:"瑞士点球 4-3 晋级八强"}
 ],
-pending: [
-{date:"7月7日", stage:"1/8决赛", a:"阿根廷", b:"埃及", note:"实时更新中：已核到埃及先开纪录，梅西点球未进；待最终比分确认"},
-{date:"7月7日", stage:"1/8决赛", a:"瑞士", b:"哥伦比亚", note:"已进入 7 月 7 日赛程，但最终赛果仍待核定"}
-]
+pending: []
 };
 Object.entries(GROUPS).forEach(([g, teams]) => {
 const t = teams;
@@ -2120,7 +2119,7 @@ if (!m.score) {
   };
 }
 
-const actualOutcome = getScoreOutcomeCode(m.score);
+const actualOutcome = m.winner || getScoreOutcomeCode(m.score);
 const actualWinner = actualOutcome === 'A' ? m.a : m.b;
 const exactHit = pred.predictedScore === m.score;
 const directionCorrect = predOutcome === actualOutcome;
@@ -2137,7 +2136,7 @@ let analysis = '';
 
 if (exactHit) {
   reasonKey = 'exact';
-  analysis = `AI 这场把比分 <strong>${m.score}</strong> 直接压中了，说明赛前对节奏、强弱差和进球分布判断都很贴。`;
+  analysis = `AI 这场把比分 <strong>${m.score}</strong> 直接压中了，说明赛前对节奏、强弱差和进球分布判断都很贴。${m.shootout ? ` 这场最终由点球 ${m.shootout} 决出胜负。`:''}`;
 } else if (directionCorrect) {
   if (actualTotal > predictedTotal) {
     reasonKey = 'under_goals';
@@ -2175,7 +2174,8 @@ return {
   analysis,
   statusClass: exactHit ? 'exact' : (directionCorrect ? 'direction' : 'miss'),
   statusText: exactHit ? '比分命中' : (directionCorrect ? '方向命中' : '判断错误'),
-  hitBanner: exactHit ? '✅ 精准命中' : (directionCorrect ? '✓ 方向正确' : '✗ 方向错误')
+  hitBanner: exactHit ? '✅ 精准命中' : (directionCorrect ? '✓ 方向正确' : '✗ 方向错误'),
+  displayScore: m.shootout ? `${m.score}（点球${m.shootout}）` : m.score
 };
 }
 
@@ -2222,7 +2222,7 @@ const completedCards = completed.map(m => `
       </div>
       <div class="knockout-scorebox">
         <div class="knockout-score-stack">
-          <div class="knockout-score-main">${m.score}</div>
+          <div class="knockout-score-main">${m.displayScore}</div>
           <div class="knockout-score-sub">实际比分</div>
           <div class="knockout-score-pred">AI预测: ${m.pred.predictedScore}</div>
         </div>
@@ -2333,6 +2333,7 @@ function buildKnockoutLive() {
 const dashboardHtml = buildKnockoutDashboard();
 const doneCards = KNOCKOUT_STATUS.completed.map(m => {
 const pred = predictMatch(m.a, m.b, m.stage);
+const displayScore = m.shootout ? `${m.score}（点球${m.shootout}）` : m.score;
 return `
 <div style="padding:10px 12px;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:10px">
   <div style="display:flex;justify-content:space-between;gap:8px;font-size:.7rem;color:var(--muted);margin-bottom:6px">
@@ -2341,7 +2342,7 @@ return `
   </div>
   <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:.9rem;font-weight:700">
     <span style="display:inline-flex;align-items:center;gap:6px">${flagHTML(m.a)} ${m.a}</span>
-    <span style="color:var(--green)">${m.score}</span>
+    <span style="color:var(--green)">${displayScore}</span>
     <span style="display:inline-flex;align-items:center;gap:6px">${m.b} ${flagHTML(m.b)}</span>
   </div>
   <div style="margin-top:6px;font-size:.72rem;color:var(--muted)">AI预测 ${pred ? pred.predictedScore : '?-?'} · ${m.note}</div>
@@ -2365,7 +2366,7 @@ return `
 
 const bracketHtml = `
 <div style="font-size:.78rem;color:var(--muted);line-height:1.7;margin-bottom:12px">
-截至 2026-07-08（北京时间），已结束的 6 场 1/8 决赛都已补入；7 月 7 日的阿根廷 vs 埃及进入实时更新，瑞士 vs 哥伦比亚保留待最终赛果核定。
+截至 2026-07-08（北京时间），8 场 1/8 决赛已全部补入；阿根廷 3 比 2 埃及完成逆转，瑞士 0 比 0 哥伦比亚后通过点球 4 比 3 晋级。
 </div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px">${doneCards}</div>
 <div style="margin-top:12px;font-size:.8rem;color:var(--gold);font-weight:700">今夜待赛</div>
