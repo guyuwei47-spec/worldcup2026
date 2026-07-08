@@ -332,6 +332,80 @@ nav button:hover,nav button.active{color:var(--green);border-color:var(--green);
 .knockout-insight-card .ki-count{font-size:1.3rem;font-weight:900;color:var(--green);margin:6px 0}
 .knockout-insight-card .ki-body{font-size:.76rem;color:var(--muted);line-height:1.6}
 .knockout-pending-tip{font-size:.78rem;color:var(--muted);line-height:1.7;margin-bottom:12px}
+.home-priority-grid{display:grid;grid-template-columns:1.15fr .95fr;gap:14px;margin-top:14px}
+.home-priority-panel{background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.55);border-radius:18px;padding:18px}
+.home-priority-panel h3{font-size:1rem;color:#9d174d;margin-bottom:10px}
+.home-priority-note{font-size:.76rem;color:var(--muted);line-height:1.65;margin-bottom:12px}
+.priority-stack{display:flex;flex-direction:column;gap:10px}
+.priority-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:14px}
+.priority-card-top{display:flex;justify-content:space-between;gap:10px;align-items:center;font-size:.72rem;color:var(--muted);margin-bottom:8px}
+.priority-card-title{font-size:.94rem;font-weight:800;color:#831843}
+.priority-scoreline{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:6px}
+.priority-scoreline .actual{font-size:1.28rem;font-weight:900;color:#831843}
+.priority-scoreline .pred{font-size:.8rem;color:var(--muted)}
+.priority-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.priority-badge{font-size:.72rem;color:var(--muted);padding:4px 8px;border-radius:999px;background:rgba(252,231,243,.75);border:1px solid var(--border)}
+.priority-link{margin-top:10px;display:inline-flex;align-items:center;gap:6px;padding:7px 12px;border-radius:999px;border:1px solid var(--pink);background:linear-gradient(135deg,#fff,#fce7f3);color:#9d174d;font-size:.78rem;font-weight:800;cursor:pointer}
+.editorial-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:14px}
+.editorial-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:16px}
+.editorial-card h4{font-size:.92rem;color:#9d174d;margin-bottom:10px}
+.editorial-list{display:flex;flex-direction:column;gap:8px}
+.editorial-item{padding:10px 12px;background:rgba(252,231,243,.68);border:1px solid var(--border);border-radius:12px}
+.editorial-item strong{color:#831843}
+.editorial-item p{font-size:.76rem;color:var(--muted);line-height:1.6;margin-top:4px}
+.editorial-link{margin-top:8px;display:inline-flex;font-size:.74rem;font-weight:800;color:#9d174d;cursor:pointer}
+.view-hero{margin-bottom:18px;padding:18px 20px;background:linear-gradient(135deg,#fce7f3 0%,#fbcfe8 100%);border:2px solid var(--pink);border-radius:22px}
+.view-hero h2{font-size:1.34rem;margin-bottom:8px}
+.view-hero p{font-size:.84rem;color:var(--muted);line-height:1.7}
+.view-shell{display:grid;gap:16px}
+.match-hero{display:grid;grid-template-columns:1.1fr .9fr;gap:14px}
+.match-hero-card,.match-panel,.trust-panel,.subscribe-panel{background:#fff;border:1px solid var(--border);border-radius:18px;padding:18px}
+.match-hero-card h3,.match-panel h3,.trust-panel h3,.subscribe-panel h3{font-size:1rem;color:#9d174d;margin-bottom:10px}
+.match-headline{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;flex-wrap:wrap}
+.match-title{font-size:1.2rem;font-weight:900;color:#831843}
+.match-meta{font-size:.76rem;color:var(--muted);margin-top:4px}
+.match-score-hero{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:center;margin-top:14px}
+.match-team-col{text-align:center}
+.match-team-col .flag{font-size:2.2rem;line-height:1}
+.match-team-col .name{font-size:1rem;font-weight:800;margin-top:6px}
+.match-score-box{min-width:180px;text-align:center;background:linear-gradient(135deg,#fff,#fdf2f8);border:1px solid var(--border);border-radius:18px;padding:14px 16px}
+.match-score-box .actual{font-size:2rem;font-weight:900;color:#831843}
+.match-score-box .pred{font-size:.86rem;color:#9d174d;font-weight:800;margin-top:6px}
+.match-score-box .sub{font-size:.72rem;color:var(--muted);margin-top:4px}
+.chip-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chip{font-size:.74rem;color:var(--muted);padding:5px 9px;border-radius:999px;background:rgba(252,231,243,.72);border:1px solid var(--border)}
+.match-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.prob-slab{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+.prob-box{background:rgba(252,231,243,.68);border:1px solid var(--border);border-radius:14px;padding:12px;text-align:center}
+.prob-box .v{font-size:1.4rem;font-weight:900;color:#831843}
+.prob-box .l{font-size:.72rem;color:var(--muted);margin-top:4px}
+.top3-line{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.nav-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.ghost-btn,.primary-btn{border:none;border-radius:999px;padding:9px 14px;font-size:.8rem;font-weight:800;cursor:pointer}
+.ghost-btn{background:#fff;border:1px solid var(--border);color:#9d174d}
+.primary-btn{background:linear-gradient(135deg,var(--green),var(--purple));color:#fff;box-shadow:0 6px 18px rgba(236,72,153,.2)}
+.trust-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.trust-stat{background:rgba(252,231,243,.68);border:1px solid var(--border);border-radius:16px;padding:14px}
+.trust-stat .label{font-size:.72rem;color:var(--muted)}
+.trust-stat .value{font-size:1.5rem;font-weight:900;color:#831843;margin-top:6px}
+.trust-stat .sub{font-size:.74rem;color:var(--muted);margin-top:6px;line-height:1.5}
+.trust-bars{display:grid;gap:10px;margin-top:12px}
+.trust-bar-row{background:rgba(252,231,243,.6);border:1px solid var(--border);border-radius:14px;padding:12px}
+.trust-bar-row .top{display:flex;justify-content:space-between;gap:10px;font-size:.78rem;margin-bottom:8px}
+.trust-bar{height:8px;background:#fce7f3;border-radius:999px;overflow:hidden}
+.trust-fill{height:100%;background:linear-gradient(90deg,var(--green),var(--purple));border-radius:999px}
+.trust-sample-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.sample-card{background:rgba(252,231,243,.65);border:1px solid var(--border);border-radius:16px;padding:14px}
+.sample-card h4{font-size:.9rem;color:#9d174d;margin-bottom:8px}
+.sample-card p{font-size:.76rem;color:var(--muted);line-height:1.6}
+.subscribe-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.subscribe-option-list{display:grid;gap:10px;margin-top:12px}
+.subscribe-option{display:flex;gap:10px;align-items:flex-start;padding:12px;background:rgba(252,231,243,.66);border:1px solid var(--border);border-radius:14px}
+.subscribe-option input{margin-top:2px}
+.subscribe-form{display:grid;gap:10px;margin-top:12px}
+.subscribe-form input{padding:11px 12px;border:1px solid var(--border);border-radius:12px;background:#fff;color:#831843}
+.subscribe-form small{font-size:.74rem;color:var(--muted);line-height:1.6}
+.subscribe-status{font-size:.78rem;color:#9d174d;margin-top:6px;min-height:1.2em}
 
 /* Responsive */
 @media(max-width:768px){
@@ -345,6 +419,9 @@ nav{justify-content:center}
 .knockout-teams{flex-direction:column}
 .knockout-scorebox{min-width:auto;width:100%}
 .knockout-team-panel{width:100%}
+.home-priority-grid,.match-hero,.match-grid-2,.trust-sample-grid,.subscribe-grid{grid-template-columns:1fr}
+.match-score-hero{grid-template-columns:1fr}
+.match-score-box{min-width:auto}
 }
 
 /* Loading */
@@ -613,6 +690,36 @@ nav{justify-content:center}
 <div class="match-cards" id="all-matches"></div>
 </div>
 </details>
+</div>
+
+<div id="match-detail" class="section">
+<div class="view-shell">
+<div class="view-hero">
+<h2>单场比赛详情页</h2>
+<p>这里会把同一场比赛的赛前预测、真实赛果、AI 复盘和淘汰赛后续影响放在一起，方便你单独分享出去。</p>
+</div>
+<div id="match-detail-content"></div>
+</div>
+</div>
+
+<div id="model-profile" class="section">
+<div class="view-shell">
+<div class="view-hero">
+<h2>模型可信度档案</h2>
+<p>这页不是讲模型公式，而是讲这套 AI 现在到底在哪些场景更准、哪些场景更容易翻车，让用户知道什么时候该信、什么时候该打折看。</p>
+</div>
+<div id="model-profile-content"></div>
+</div>
+</div>
+
+<div id="subscribe" class="section">
+<div class="view-shell">
+<div class="view-hero">
+<h2>订阅更新</h2>
+<p>第一版先做轻量提醒入口，把你关心的更新类型记下来。这里不做复杂账号系统，先把真正会回来的用户沉淀住。</p>
+</div>
+<div id="subscribe-content"></div>
+</div>
 </div>
 
 <!-- AI Prediction Engine -->
@@ -1129,6 +1236,37 @@ completed: [
 ],
 pending: []
 };
+const TEAM_SLUG = {
+"摩洛哥":"morocco","加拿大":"canada","法国":"france","巴拉圭":"paraguay","英格兰":"england","墨西哥":"mexico",
+"挪威":"norway","巴西":"brazil","西班牙":"spain","葡萄牙":"portugal","比利时":"belgium","美国":"usa",
+"阿根廷":"argentina","埃及":"egypt","瑞士":"switzerland","哥伦比亚":"colombia"
+};
+const SLUG_TEAM = Object.fromEntries(Object.entries(TEAM_SLUG).map(([team, slug]) => [slug, team]));
+function getTeamSlug(team) {
+return TEAM_SLUG[team] || (TEAM_ISO[team] || team).toLowerCase();
+}
+function makeMatchSlug(a, b) {
+return `${getTeamSlug(a)}-vs-${getTeamSlug(b)}`;
+}
+function getScoreOutcomeCode(score) {
+const [a, b] = score.split('-').map(Number);
+if (a > b) return 'A';
+if (a < b) return 'B';
+return 'D';
+}
+function actualWinnerFromMatch(m) {
+if (m.winner) return m.winner === 'A' ? m.a : m.b;
+const [ga, gb] = m.score.split('-').map(Number);
+if (ga > gb) return m.a;
+if (gb > ga) return m.b;
+return m.a;
+}
+[...KNOCKOUT_STATUS.completed, ...KNOCKOUT_STATUS.pending].forEach((m, index) => {
+  m.slug = makeMatchSlug(m.a, m.b);
+  m.order = index;
+});
+const KNOCKOUT_MATCHES = [...KNOCKOUT_STATUS.completed, ...KNOCKOUT_STATUS.pending];
+const MATCH_INDEX = new Map(KNOCKOUT_MATCHES.map(m => [m.slug, m]));
 Object.entries(GROUPS).forEach(([g, teams]) => {
 const t = teams;
 const md = SCHEDULE[g];
@@ -1459,11 +1597,31 @@ console.log('%c========== 回测结束 ==========', 'color:#22c55e');
 return stats;
 }
 // ==================== UI ====================
+function setActiveNavButton(id, clicked) {
+const buttons = Array.from(document.querySelectorAll('nav button'));
+buttons.forEach(b => b.classList.remove('active'));
+if (clicked) {
+  clicked.classList.add('active');
+  return;
+}
+const map = {
+  dashboard: '淘汰赛中心',
+  predict: '⚽ 姬的预测',
+  teams: '球队数据',
+  bracket: '淘汰赛',
+  leaderboard: '排行榜',
+  methodology: '📖 方法论'
+};
+const label = map[id];
+if (!label) return;
+const target = buttons.find(btn => btn.textContent.trim() === label);
+if (target) target.classList.add('active');
+}
+
 function showSection(id) {
 document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
 document.getElementById(id).classList.add('active');
-document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
-event.target.classList.add('active');
+setActiveNavButton(id, window.event && window.event.target ? window.event.target : null);
 
 if (id === 'leaderboard') showLB('strength', document.querySelector('.lb-tabs .lb-tab'));
 if (id === 'groups') buildScenarios();
@@ -1479,6 +1637,72 @@ if (archive) {
   archive.open = true;
   archive.scrollIntoView({behavior:'smooth', block:'start'});
 }
+}
+
+function navigateToHome() {
+location.hash = '#home';
+}
+
+function openKnockoutMatch(slug) {
+location.hash = `#match/${slug}`;
+}
+
+function openModelProfile() {
+location.hash = '#model-profile';
+}
+
+function openSubscribe() {
+location.hash = '#subscribe';
+}
+
+function copyMatchLink(slug) {
+const url = `${location.href.split('#')[0]}#match/${slug}`;
+if (navigator.clipboard && navigator.clipboard.writeText) {
+  navigator.clipboard.writeText(url).then(() => {
+    const status = document.getElementById('match-copy-status');
+    if (status) status.textContent = '链接已复制，可以直接发给别人打开这一场。';
+  });
+  return;
+}
+const status = document.getElementById('match-copy-status');
+if (status) status.textContent = url;
+}
+
+function routeFromHash() {
+const raw = (location.hash || '#home').replace(/^#/, '');
+if (!raw || raw === 'home') return {view:'dashboard'};
+if (raw.startsWith('match/')) return {view:'match-detail', slug: raw.slice(6)};
+if (raw === 'model-profile') return {view:'model-profile'};
+if (raw === 'subscribe') return {view:'subscribe'};
+return {view:'dashboard'};
+}
+
+function renderRoute() {
+const route = routeFromHash();
+if (route.view === 'match-detail' && route.slug) {
+  renderMatchDetailView(route.slug);
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.getElementById('match-detail').classList.add('active');
+  setActiveNavButton('dashboard');
+  return;
+}
+if (route.view === 'model-profile') {
+  renderModelProfileView();
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.getElementById('model-profile').classList.add('active');
+  setActiveNavButton('dashboard');
+  return;
+}
+if (route.view === 'subscribe') {
+  renderSubscribeView();
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.getElementById('subscribe').classList.add('active');
+  setActiveNavButton('dashboard');
+  return;
+}
+document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+document.getElementById('dashboard').classList.add('active');
+setActiveNavButton('dashboard');
 }
 
 // Build all matches grouped by date
@@ -1759,8 +1983,8 @@ if (!result) return;
 
 const ta = TEAMS[a], tb = TEAMS[b];
 
-document.getElementById('pr-flagA').innerHTML = flagHTML(teamA);
-document.getElementById('pr-flagB').innerHTML = flagHTML(teamB);
+document.getElementById('pr-flagA').innerHTML = flagHTML(a);
+document.getElementById('pr-flagB').innerHTML = flagHTML(b);
 document.getElementById('pr-nameA').textContent = a;
 document.getElementById('pr-nameB').textContent = b;
 document.getElementById('pr-probA').textContent = result.teamA.winProb + '%';
@@ -2170,6 +2394,34 @@ return `<div class="bracket-match">
 </div>`;
 }
 
+const finalPred = predictMatch(finalists[0], finalists[1], '淘汰赛');
+const champProb = !finalPred ? 50 : (champion === finalists[0] ? finalPred.teamA.winProb : finalPred.teamB.winProb);
+
+container.innerHTML = `
+<div class="bracket-round">
+<h3>1/8决赛（真实）</h3>
+${actualR16.map(m => actualMatchHTML(m)).join('')}
+</div>
+<div class="bracket-round">
+<h3>8强（真实对阵）</h3>
+${qfPairs.map(([a,b]) => matchHTML(a,b, pickWinner(a,b))).join('')}
+</div>
+<div class="bracket-round">
+<h3>半决赛（AI）</h3>
+${sfPairs.map(([a,b]) => matchHTML(a,b, pickWinner(a,b))).join('')}
+</div>
+<div class="bracket-round">
+<h3>决赛（AI）</h3>
+${matchHTML(finalists[0], finalists[1], champion)}
+<div class="champion-card">
+<div class="champion-trophy">🏆</div>
+<div class="champion-label">🏆 姬的预测冠军 🏆</div>
+<div class="champion-name">${flagHTML(champion)} ${champion}</div>
+<div class="champion-tagline">夺冠路径胜率约 ${champProb}% · 仅 AI 推演，仅供娱乐</div>
+</div>
+</div>`;
+}
+
 function getScoreOutcomeCode(score) {
 const [a, b] = score.split('-').map(Number);
 if (a > b) return 'A';
@@ -2287,6 +2539,103 @@ const insightCards = Object.values(missMap)
     <div class="ki-count">${item.count} 场</div>
     <div class="ki-body">${item.desc}</div>
   </div>`).join('');
+const latestCompleted = completed.slice(-3).reverse();
+const todayFocusHtml = pending.length ? pending.slice(0,2).map(m => `
+  <div class="priority-card">
+    <div class="priority-card-top">
+      <span>${m.date} · ${m.stage}</span>
+      <span class="priority-badge">今日待赛</span>
+    </div>
+    <div class="priority-card-title">${m.a} vs ${m.b}</div>
+    <div class="priority-scoreline">
+      <span class="actual">${m.pred.predictedScore}</span>
+      <span class="pred">AI 主预测比分</span>
+    </div>
+    <div class="priority-badges">
+      <span class="priority-badge">${m.a} 胜率 ${m.pred.teamA.winProb}%</span>
+      <span class="priority-badge">平 ${m.pred.draw}%</span>
+      <span class="priority-badge">${m.b} 胜率 ${m.pred.teamB.winProb}%</span>
+    </div>
+    <button class="priority-link" onclick="openKnockoutMatch('${m.slug}')">查看单场页</button>
+  </div>`).join('') : `
+  <div class="priority-card">
+    <div class="priority-card-top">
+      <span>淘汰赛阶段</span>
+      <span class="priority-badge">今天暂无待赛</span>
+    </div>
+    <div class="priority-card-title">当前焦点转向 8 强对阵</div>
+    <div class="home-priority-note">今天没有新的 1/8 决赛，但 8 强对阵已经形成。现在更适合看每场单独复盘，或者沿着淘汰赛路径继续追踪 AI 后续判断。</div>
+    <div class="priority-badges">
+      <span class="priority-badge">摩洛哥 vs 法国</span>
+      <span class="priority-badge">英格兰 vs 挪威</span>
+      <span class="priority-badge">西班牙 vs 比利时</span>
+      <span class="priority-badge">阿根廷 vs 瑞士</span>
+    </div>
+    <button class="priority-link" onclick="showSection('bracket')">查看淘汰赛路径</button>
+  </div>`;
+const latestRecapHtml = latestCompleted.map(m => `
+  <div class="priority-card">
+    <div class="priority-card-top">
+      <span>${m.date} · ${m.stage}</span>
+      <span class="priority-badge">${m.statusText}</span>
+    </div>
+    <div class="priority-card-title">${m.a} vs ${m.b}</div>
+    <div class="priority-scoreline">
+      <span class="actual">${m.displayScore}</span>
+      <span class="pred">AI ${m.pred.predictedScore}</span>
+    </div>
+    <div class="home-priority-note">${m.analysis.replace(/<[^>]+>/g, '')}</div>
+    <button class="priority-link" onclick="openKnockoutMatch('${m.slug}')">进入这场复盘</button>
+  </div>`).join('');
+const missList = completed.filter(m => !m.directionCorrect).slice(0,3);
+const goodList = completed.filter(m => m.top3Hit || m.directionCorrect).slice(0,3);
+const editorialHtml = `
+<div class="knockout-rich-block">
+  <h3>📰 赛后复盘专栏</h3>
+  <div class="editorial-grid">
+    <div class="editorial-card">
+      <h4>本轮 AI 翻车榜</h4>
+      <div class="editorial-list">
+        ${(missList.length ? missList : completed.slice(0,1)).map(m => `
+          <div class="editorial-item">
+            <strong>${m.a} ${m.displayScore} ${m.b}</strong>
+            <p>${m.analysis.replace(/<[^>]+>/g, '')}</p>
+            <span class="editorial-link" onclick="openKnockoutMatch('${m.slug}')">看这场单独复盘</span>
+          </div>`).join('')}
+      </div>
+    </div>
+    <div class="editorial-card">
+      <h4>本轮高光榜</h4>
+      <div class="editorial-list">
+        ${goodList.map(m => `
+          <div class="editorial-item">
+            <strong>${m.a} vs ${m.b}</strong>
+            <p>${m.top3Hit ? '真实比分进入了 AI 的 Top-3 候选，模型对比赛形状判断更接近。' : '至少方向判断站对了边，说明强弱关系的识别仍有参考价值。'}</p>
+            <span class="editorial-link" onclick="openKnockoutMatch('${m.slug}')">看这场单独复盘</span>
+          </div>`).join('')}
+      </div>
+    </div>
+    <div class="editorial-card">
+      <h4>模型修正建议</h4>
+      <div class="editorial-list">
+        ${Object.values(missMap).filter(item => item.count > 0).sort((a,b) => b.count - a.count).slice(0,3).map(item => `
+          <div class="editorial-item">
+            <strong>${item.title}</strong>
+            <p>${item.desc}</p>
+          </div>`).join('')}
+      </div>
+    </div>
+  </div>
+</div>`;
+const growthHtml = `
+<div class="knockout-rich-block">
+  <h3>📌 留下来继续看</h3>
+  <div class="home-priority-note">这个站现在不只是赛前看结论，也会在赛后持续补复盘和模型修正。你可以继续往下看模型可信度，也可以先把更新提醒记下来。</div>
+  <div class="nav-row">
+    <button class="ghost-btn" onclick="openModelProfile()">打开模型可信度档案</button>
+    <button class="primary-btn" onclick="openSubscribe()">订阅更新提醒</button>
+  </div>
+</div>`;
 const accuracyHtml = `
 <div class="knockout-rich-block">
   <h3>📊 AI 预测准确率</h3>
@@ -2334,7 +2683,7 @@ const accuracyHtml = `
 </div>`;
 
 const completedCards = completed.map(m => `
-<div class="knockout-review-card">
+<div class="knockout-review-card" onclick="openKnockoutMatch('${m.slug}')" style="cursor:pointer">
   <div class="knockout-review-top">
     <span>${m.date} · ${m.stage}</span>
     <span class="knockout-status ${m.statusClass}">${m.statusText}</span>
@@ -2370,11 +2719,12 @@ const completedCards = completed.map(m => `
       <span>${m.top3Hit ? '实际比分在 Top-3 内' : '实际比分未进 Top-3'}</span>
     </div>
     <div class="knockout-analysis">${m.analysis}</div>
+    <button class="priority-link" style="margin-top:12px" onclick="event.stopPropagation(); openKnockoutMatch('${m.slug}')">查看单场页</button>
   </div>
 </div>`).join('');
 
 const pendingCards = pending.map(m => `
-<div class="knockout-review-card">
+<div class="knockout-review-card" onclick="openKnockoutMatch('${m.slug}')" style="cursor:pointer">
   <div class="knockout-review-top">
     <span>${m.date} · ${m.stage}</span>
     <span class="knockout-status pending">待赛预测</span>
@@ -2409,10 +2759,23 @@ const pendingCards = pending.map(m => `
       <span>${m.b} 胜率 ${m.pred.teamB.winProb}%</span>
     </div>
     <div class="knockout-analysis">${m.analysis}<br><strong>关键因素：</strong>${m.pred.keyFactors.slice(0,3).join(' / ')}</div>
+    <button class="priority-link" style="margin-top:12px" onclick="event.stopPropagation(); openKnockoutMatch('${m.slug}')">查看单场页</button>
   </div>
 </div>`).join('');
 
 return `
+<div class="home-priority-grid">
+  <div class="home-priority-panel">
+    <h3>今天要看什么</h3>
+    <div class="home-priority-note">先看今天有没有新比赛；如果今天没有待赛，就直接把注意力切到最新形成的淘汰赛焦点与后续路径。</div>
+    <div class="priority-stack">${todayFocusHtml}</div>
+  </div>
+  <div class="home-priority-panel">
+    <h3>刚刚发生了什么</h3>
+    <div class="home-priority-note">这里优先放最新结束的几场淘汰赛，让用户第一眼就知道 AI 刚刚有没有被打脸。</div>
+    <div class="priority-stack">${latestRecapHtml}</div>
+  </div>
+</div>
 <div class="knockout-rich-block">
   <h3>🎯 淘汰赛 AI 战绩总览</h3>
   <div class="knockout-overview-grid">
@@ -2444,6 +2807,8 @@ return `
   </div>
   <div class="knockout-summary-note">和小组赛一样，这里单独看三层命中：先看胜负方向，再看主比分是否压中，最后看真实比分有没有进入 AI 的 Top-3 候选。</div>
 </div>
+${editorialHtml}
+${growthHtml}
 ${accuracyHtml}
 <div class="knockout-rich-block">
   <h3>🧾 淘汰赛逐场复盘</h3>
@@ -2458,6 +2823,7 @@ ${accuracyHtml}
 
 function buildKnockoutLive() {
 const dashboardHtml = buildKnockoutDashboard();
+const pending = KNOCKOUT_STATUS.pending;
 const doneCards = KNOCKOUT_STATUS.completed.map(m => {
 const pred = predictMatch(m.a, m.b, m.stage);
 const displayScore = m.shootout ? `${m.score}（点球${m.shootout}）` : m.score;
@@ -2505,32 +2871,350 @@ const bracketContainer = document.getElementById('knockout-live');
 if (bracketContainer) bracketContainer.innerHTML = bracketHtml;
 }
 
-const finalPred = predictMatch(finalists[0], finalists[1], '淘汰赛');
-const champProb = !finalPred ? 50 : (champion === finalists[0] ? finalPred.teamA.winProb : finalPred.teamB.winProb);
+function getKnockoutMatchNeighbors(slug) {
+const idx = KNOCKOUT_MATCHES.findIndex(m => m.slug === slug);
+return {
+  prev: idx > 0 ? KNOCKOUT_MATCHES[idx - 1] : null,
+  next: idx >= 0 && idx < KNOCKOUT_MATCHES.length - 1 ? KNOCKOUT_MATCHES[idx + 1] : null
+};
+}
 
+function getQuarterfinalPairs() {
+const completed = KNOCKOUT_STATUS.completed;
+if (completed.length < 8) return [];
+return [
+  [actualWinnerFromMatch(completed[0]), actualWinnerFromMatch(completed[1])],
+  [actualWinnerFromMatch(completed[2]), actualWinnerFromMatch(completed[3])],
+  [actualWinnerFromMatch(completed[4]), actualWinnerFromMatch(completed[5])],
+  [actualWinnerFromMatch(completed[6]), actualWinnerFromMatch(completed[7])]
+];
+}
+
+function getKnockoutImpact(match) {
+if (!match.score) {
+  return {
+    summary: '这场还没踢完，后续路径还没有真实落位。',
+    nextOpponent: null,
+    nextPrediction: null
+  };
+}
+const pairs = [
+  [KNOCKOUT_MATCHES[0], KNOCKOUT_MATCHES[1]],
+  [KNOCKOUT_MATCHES[2], KNOCKOUT_MATCHES[3]],
+  [KNOCKOUT_MATCHES[4], KNOCKOUT_MATCHES[5]],
+  [KNOCKOUT_MATCHES[6], KNOCKOUT_MATCHES[7]]
+];
+for (const [left, right] of pairs) {
+  if (left.slug !== match.slug && right.slug !== match.slug) continue;
+  const other = left.slug === match.slug ? right : left;
+  if (!other.score) {
+    return {
+      summary: `${actualWinnerFromMatch(match)} 已锁定下一轮资格，但对手还没产生。`,
+      nextOpponent: null,
+      nextPrediction: null
+    };
+  }
+  const winner = actualWinnerFromMatch(match);
+  const otherWinner = actualWinnerFromMatch(other);
+  const pred = predictMatch(winner, otherWinner, '淘汰赛');
+  return {
+    summary: `${winner} 下一轮将对阵 ${otherWinner}。`,
+    nextOpponent: otherWinner,
+    nextPrediction: pred
+  };
+}
+return {
+  summary: '这场比赛的后续路径信息暂时不可用。',
+  nextOpponent: null,
+  nextPrediction: null
+};
+}
+
+function buildUnifiedPredictionRecords() {
+const tierWeight = {'热门':4, '一线':3, '二线':2, '中游':1};
+const records = [];
+ALL_MATCHES.forEach(match => {
+  if (!match.result) return;
+  const pred = predictMatch(match.a, match.b, '小组赛');
+  if (!pred) return;
+  const [aa, ab] = match.result.score.split('-').map(Number);
+  const predictedScore = pred.predictedScore;
+  const [pa, pb] = predictedScore.split('-').map(Number);
+  const actualOutcome = aa > ab ? 'A' : aa < ab ? 'B' : 'D';
+  const predOutcome = pa > pb ? 'A' : pa < pb ? 'B' : 'D';
+  const teamAWeight = tierWeight[TEAMS[match.a].tier] || 1;
+  const teamBWeight = tierWeight[TEAMS[match.b].tier] || 1;
+  const strongVsWeak = Math.abs(teamAWeight - teamBWeight) >= 2;
+  const bothStrong = teamAWeight >= 3 && teamBWeight >= 3;
+  const coinflip = Math.abs(pred.teamA.winProb - pred.teamB.winProb) <= 12;
+  records.push({
+    stage:'小组赛',
+    a: match.a,
+    b: match.b,
+    slug: null,
+    directionHit: actualOutcome === predOutcome,
+    exactHit: predictedScore === match.result.score,
+    top3Hit: pred.topScores.some(s => s.score === match.result.score),
+    totalGoals: aa + ab,
+    scenario: bothStrong ? '强强对话' : coinflip ? '五五开比赛' : strongVsWeak ? '强队对弱队' : '中间地带',
+    upset: !coinflip && actualOutcome !== 'D' && actualOutcome !== (teamAWeight >= teamBWeight ? 'A' : 'B')
+  });
+});
+KNOCKOUT_STATUS.completed.map(analyzeKnockoutMatch).filter(Boolean).forEach(match => {
+  const teamAWeight = tierWeight[TEAMS[match.a].tier] || 1;
+  const teamBWeight = tierWeight[TEAMS[match.b].tier] || 1;
+  const strongVsWeak = Math.abs(teamAWeight - teamBWeight) >= 2;
+  const bothStrong = teamAWeight >= 3 && teamBWeight >= 3;
+  const coinflip = Math.abs(match.pred.teamA.winProb - match.pred.teamB.winProb) <= 12;
+  const [aa, ab] = match.score.split('-').map(Number);
+  records.push({
+    stage:'淘汰赛',
+    a: match.a,
+    b: match.b,
+    slug: match.slug,
+    directionHit: match.directionCorrect,
+    exactHit: match.exactHit,
+    top3Hit: match.top3Hit,
+    totalGoals: aa + ab,
+    scenario: bothStrong ? '强强对话' : coinflip ? '五五开比赛' : strongVsWeak ? '强队对弱队' : '中间地带',
+    upset: !coinflip && !match.directionCorrect
+  });
+});
+return records;
+}
+
+function summarizeRecords(list) {
+const total = list.length || 1;
+const dir = list.filter(x => x.directionHit).length;
+const exact = list.filter(x => x.exactHit).length;
+const top3 = list.filter(x => x.top3Hit).length;
+return {total:list.length, dir, exact, top3, dirPct:Math.round(dir/total*100), exactPct:Math.round(exact/total*100), top3Pct:Math.round(top3/total*100)};
+}
+
+function buildTrustBarRows(items) {
+return `<div class="trust-bars">${items.map(item => `
+  <div class="trust-bar-row">
+    <div class="top"><span>${item.label}</span><strong>${item.summary.dirPct}%</strong></div>
+    <div class="trust-bar"><div class="trust-fill" style="width:${item.summary.dirPct}%"></div></div>
+    <div class="home-priority-note" style="margin:8px 0 0">${item.summary.dir}/${item.summary.total} 场方向判断正确 · 比分全中 ${item.summary.exact} 场 · Top-3 命中 ${item.summary.top3} 场</div>
+  </div>`).join('')}</div>`;
+}
+
+function renderModelProfileView() {
+const records = buildUnifiedPredictionRecords();
+const totalSummary = summarizeRecords(records);
+const byStage = ['小组赛','淘汰赛'].map(label => ({label, summary:summarizeRecords(records.filter(r => r.stage === label))}));
+const scenarioOrder = ['强队对弱队','强强对话','五五开比赛'];
+const byScenario = scenarioOrder.map(label => {
+  const base = label === '五五开比赛' ? records.filter(r => r.scenario === label) :
+    label === '强强对话' ? records.filter(r => r.scenario === label) :
+    records.filter(r => r.scenario === label);
+  return {label, summary:summarizeRecords(base)};
+});
+const upsetSummary = summarizeRecords(records.filter(r => r.upset));
+const byGoals = [
+  {label:'低比分比赛（0-1球）', summary:summarizeRecords(records.filter(r => r.totalGoals <= 1))},
+  {label:'中比分比赛（2-3球）', summary:summarizeRecords(records.filter(r => r.totalGoals >= 2 && r.totalGoals <= 3))},
+  {label:'大比分比赛（4球及以上）', summary:summarizeRecords(records.filter(r => r.totalGoals >= 4))}
+];
+const knockoutAnalyzed = KNOCKOUT_STATUS.completed.map(analyzeKnockoutMatch).filter(Boolean);
+const goodSamples = knockoutAnalyzed.filter(m => m.top3Hit || m.directionCorrect).slice(0,3);
+const badSamples = knockoutAnalyzed.filter(m => !m.directionCorrect).slice(0,3);
+document.getElementById('model-profile-content').innerHTML = `
+  <div class="trust-panel">
+    <h3>总览</h3>
+    <div class="trust-grid">
+      <div class="trust-stat"><div class="label">胜负方向命中率</div><div class="value">${totalSummary.dirPct}%</div><div class="sub">${totalSummary.dir}/${totalSummary.total} 场</div></div>
+      <div class="trust-stat"><div class="label">比分完全命中率</div><div class="value">${totalSummary.exactPct}%</div><div class="sub">${totalSummary.exact}/${totalSummary.total} 场</div></div>
+      <div class="trust-stat"><div class="label">Top-3 比分命中率</div><div class="value">${totalSummary.top3Pct}%</div><div class="sub">${totalSummary.top3}/${totalSummary.total} 场</div></div>
+      <div class="trust-stat"><div class="label">当前样本量</div><div class="value">${totalSummary.total}</div><div class="sub">小组赛与淘汰赛已结束比赛</div></div>
+    </div>
+  </div>
+  <div class="match-grid-2">
+    <div class="trust-panel">
+      <h3>分阶段表现</h3>
+      ${buildTrustBarRows(byStage)}
+    </div>
+    <div class="trust-panel">
+      <h3>分场景表现</h3>
+      ${buildTrustBarRows([...byScenario, {label:'爆冷场景', summary:upsetSummary}])}
+    </div>
+  </div>
+  <div class="match-grid-2">
+    <div class="trust-panel">
+      <h3>分比分区间表现</h3>
+      ${buildTrustBarRows(byGoals)}
+    </div>
+    <div class="trust-panel">
+      <h3>当前已知弱点</h3>
+      <div class="editorial-list">
+        <div class="editorial-item"><strong>点球大战不属于常规比分模型能力范围</strong><p>常规时间形状可以接近，但最终谁通过点球晋级，不是这套比分模型天然擅长的东西。</p></div>
+        <div class="editorial-item"><strong>淘汰赛临场博弈会放大波动</strong><p>一旦先丢球、主动压上或者换人提速，比赛走势会比小组赛更容易脱离静态实力判断。</p></div>
+        <div class="editorial-item"><strong>豪门历史权重有时会压过短期状态</strong><p>模型对传统强队底蕴仍然给了较高权重，所以面对强队状态下滑时，容易反应偏慢。</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="trust-sample-grid">
+    <div class="sample-card">
+      <h4>高光样本</h4>
+      ${goodSamples.map(m => `<div class="editorial-item"><strong>${m.a} ${m.displayScore} ${m.b}</strong><p>${m.top3Hit ? '真实比分进入 Top-3 候选，说明模型对比赛形状更接近。' : '至少方向判断站对了边，适合当作模型仍有参考价值的证据。'}</p><span class="editorial-link" onclick="openKnockoutMatch('${m.slug}')">打开单场页</span></div>`).join('')}
+    </div>
+    <div class="sample-card">
+      <h4>翻车样本</h4>
+      ${badSamples.map(m => `<div class="editorial-item"><strong>${m.a} ${m.displayScore} ${m.b}</strong><p>${m.analysis.replace(/<[^>]+>/g, '')}</p><span class="editorial-link" onclick="openKnockoutMatch('${m.slug}')">打开单场页</span></div>`).join('')}
+    </div>
+  </div>
+  <div class="nav-row">
+    <button class="ghost-btn" onclick="navigateToHome()">回首页</button>
+    <button class="primary-btn" onclick="openSubscribe()">订阅更新</button>
+  </div>`;
+}
+
+function renderMatchDetailView(slug) {
+const raw = MATCH_INDEX.get(slug);
+const container = document.getElementById('match-detail-content');
+if (!raw) {
+  container.innerHTML = `<div class="match-panel"><h3>没有找到这场比赛</h3><p class="home-priority-note">这个链接可能已经过期，或者这场比赛还不在第一版的淘汰赛详情页范围内。</p><div class="nav-row"><button class="ghost-btn" onclick="navigateToHome()">回首页</button></div></div>`;
+  return;
+}
+const match = analyzeKnockoutMatch(raw);
+const neighbors = getKnockoutMatchNeighbors(slug);
+const impact = getKnockoutImpact(raw);
+const winnerName = raw.score ? actualWinnerFromMatch(raw) : null;
+const statusLabel = raw.score ? match.statusText : '待赛';
+const statusTone = raw.score ? match.hitBanner : '⏳ 待赛';
 container.innerHTML = `
-<div class="bracket-round">
-<h3>1/8决赛（真实）</h3>
-${actualR16.map(m => actualMatchHTML(m)).join('')}
-</div>
-<div class="bracket-round">
-<h3>8强（真实对阵）</h3>
-${qfPairs.map(([a,b]) => matchHTML(a,b, pickWinner(a,b))).join('')}
-</div>
-<div class="bracket-round">
-<h3>半决赛（AI）</h3>
-${sfPairs.map(([a,b]) => matchHTML(a,b, pickWinner(a,b))).join('')}
-</div>
-<div class="bracket-round">
-<h3>决赛（AI）</h3>
-${matchHTML(finalists[0], finalists[1], champion)}
-<div class="champion-card">
-<div class="champion-trophy">🏆</div>
-<div class="champion-label">🏆 姬的预测冠军 🏆</div>
-<div class="champion-name">${flagHTML(champion)} ${champion}</div>
-<div class="champion-tagline">夺冠路径胜率约 ${champProb}% · 仅 AI 推演，仅供娱乐</div>
-</div>
-</div>`;
+  <div class="match-hero">
+    <div class="match-hero-card">
+      <div class="match-headline">
+        <div>
+          <div class="match-title">${flagHTML(match.a)} ${match.a} vs ${match.b} ${flagHTML(match.b)}</div>
+          <div class="match-meta">${match.date} · ${match.stage} · 可单独分享的淘汰赛详情页</div>
+        </div>
+        <div class="chip">${statusLabel}</div>
+      </div>
+      <div class="match-score-hero">
+        <div class="match-team-col">
+          <div class="flag">${flagHTML(match.a)}</div>
+          <div class="name">${match.a}</div>
+        </div>
+        <div class="match-score-box">
+          <div class="actual">${match.displayScore || '待赛'}</div>
+          <div class="pred">AI预测: ${match.pred.predictedScore}</div>
+          <div class="sub">${statusTone}</div>
+        </div>
+        <div class="match-team-col">
+          <div class="flag">${flagHTML(match.b)}</div>
+          <div class="name">${match.b}</div>
+        </div>
+      </div>
+      <div class="chip-row">
+        <span class="chip">${match.a} 胜率 ${match.pred.teamA.winProb}%</span>
+        <span class="chip">平 ${match.pred.draw}%</span>
+        <span class="chip">${match.b} 胜率 ${match.pred.teamB.winProb}%</span>
+        <span class="chip">比分自信度 ${match.pred.scoreConfidence.label} ${match.pred.scoreConfidence.percent}%</span>
+      </div>
+    </div>
+    <div class="match-hero-card">
+      <h3>赛前判断</h3>
+      <div class="home-priority-note">这一块只回答一件事：AI 在比赛开打前到底看到了什么，为什么会给出这个主预测比分。</div>
+      <div class="prob-slab">
+        <div class="prob-box"><div class="v">${match.pred.teamA.winProb}%</div><div class="l">${match.a} 胜率</div></div>
+        <div class="prob-box"><div class="v">${match.pred.draw}%</div><div class="l">平局概率</div></div>
+        <div class="prob-box"><div class="v">${match.pred.teamB.winProb}%</div><div class="l">${match.b} 胜率</div></div>
+      </div>
+      <div class="top3-line">
+        ${match.pred.topScores.map((s, i) => `<span class="knockout-top3-badge top${i+1}"><b>${s.score}</b><em>${s.percent}%</em></span>`).join('')}
+      </div>
+      <div class="home-priority-note" style="margin-top:12px">${match.pred.analysis}</div>
+    </div>
+  </div>
+  <div class="match-grid-2">
+    <div class="match-panel">
+      <h3>赛前判断</h3>
+      <div class="editorial-list">
+        ${match.pred.keyFactors.map(item => `<div class="editorial-item"><strong>${item}</strong></div>`).join('')}
+      </div>
+      <div class="home-priority-note" style="margin-top:12px">关键球员：${match.pred.playersToWatch.map(p => `${p.player}（${p.team}）`).join('、')}</div>
+    </div>
+    <div class="match-panel">
+      <h3>赛后复盘</h3>
+      <div class="editorial-item">
+        <strong>${raw.score ? `真实赛果 ${match.displayScore}` : '比赛尚未结束'}</strong>
+        <p>${raw.score ? match.analysis.replace(/<[^>]+>/g, '') : '赛后这里会自动切成复盘模式，直接告诉用户 AI 有没有翻车，以及为什么翻车。'}</p>
+      </div>
+      <div class="chip-row">
+        <span class="chip">${raw.score ? match.hitBanner : '待赛预测'}</span>
+        <span class="chip">${match.top3Hit ? '真实比分进入 Top-3' : '真实比分未进 Top-3'}</span>
+      </div>
+    </div>
+  </div>
+  <div class="match-grid-2">
+    <div class="match-panel">
+      <h3>后续影响</h3>
+      <div class="editorial-item">
+        <strong>${impact.summary}</strong>
+        <p>${impact.nextPrediction ? `AI 目前对下一轮的主预测比分是 ${impact.nextPrediction.predictedScore}，${winnerName} 胜率 ${impact.nextPrediction.teamA.winProb}% ，对手胜率 ${impact.nextPrediction.teamB.winProb}% 。` : '这场比赛的下一轮对阵信息还没有完全落定，路径区会在对应结果出来后自动衔接。'}</p>
+      </div>
+    </div>
+    <div class="match-panel">
+      <h3>分享与跳转</h3>
+      <div class="nav-row">
+        <button class="primary-btn" onclick="copyMatchLink('${match.slug}')">复制本场链接</button>
+        <button class="ghost-btn" onclick="navigateToHome()">回首页</button>
+        <button class="ghost-btn" onclick="openModelProfile()">看模型档案</button>
+        <button class="ghost-btn" onclick="openSubscribe()">订阅更新</button>
+      </div>
+      <div id="match-copy-status" class="subscribe-status"></div>
+      <div class="nav-row">
+        ${neighbors.prev ? `<button class="ghost-btn" onclick="openKnockoutMatch('${neighbors.prev.slug}')">上一场</button>` : ''}
+        ${neighbors.next ? `<button class="ghost-btn" onclick="openKnockoutMatch('${neighbors.next.slug}')">下一场</button>` : ''}
+      </div>
+    </div>
+  </div>`;
+}
+
+const SUBSCRIBE_STORAGE_KEY = 'worldcup2026-subscribe';
+function saveSubscribePreferences() {
+const email = document.getElementById('subscribe-email').value.trim();
+const prefs = {
+  email,
+  daily: document.getElementById('sub-daily').checked,
+  bracket: document.getElementById('sub-bracket').checked,
+  recap: document.getElementById('sub-recap').checked
+};
+localStorage.setItem(SUBSCRIBE_STORAGE_KEY, JSON.stringify(prefs));
+const status = document.getElementById('subscribe-status');
+if (status) status.textContent = '这台设备上的提醒偏好已经记住了，后面可以继续接真实外部渠道。';
+}
+
+function renderSubscribeView() {
+const saved = JSON.parse(localStorage.getItem(SUBSCRIBE_STORAGE_KEY) || '{}');
+document.getElementById('subscribe-content').innerHTML = `
+  <div class="subscribe-grid">
+    <div class="subscribe-panel">
+      <h3>你想收到什么更新</h3>
+      <div class="subscribe-option-list">
+        <label class="subscribe-option"><input id="sub-daily" type="checkbox" ${saved.daily ? 'checked' : ''}><div><strong>每日赛前预测提醒</strong><div class="home-priority-note">当天有关键比赛时，优先提醒主预测比分、胜率和焦点场次。</div></div></label>
+        <label class="subscribe-option"><input id="sub-bracket" type="checkbox" ${saved.bracket ? 'checked' : ''}><div><strong>淘汰赛路径更新提醒</strong><div class="home-priority-note">每次真实对阵形成后，及时更新 AI 后续路径。</div></div></label>
+        <label class="subscribe-option"><input id="sub-recap" type="checkbox" ${saved.recap ? 'checked' : ''}><div><strong>复盘更新提醒</strong><div class="home-priority-note">当 AI 翻车榜、高光榜和模型修正建议刷新时提醒你回来看看。</div></div></label>
+      </div>
+    </div>
+    <div class="subscribe-panel">
+      <h3>先做轻量订阅入口</h3>
+      <div class="home-priority-note">第一版先不做账号系统。我们先把你关心的提醒类型和联系邮箱记下来，后面再接真实的外部渠道。</div>
+      <div class="subscribe-form">
+        <input id="subscribe-email" type="email" placeholder="邮箱（可选）" value="${saved.email || ''}">
+        <button class="primary-btn" onclick="saveSubscribePreferences()">保存我的提醒偏好</button>
+        <small>现在先保存在这台设备里，作为第一版可用入口。后面接入邮箱、微信群或公众号时，可以直接沿着这套偏好扩展。</small>
+        <div id="subscribe-status" class="subscribe-status"></div>
+      </div>
+      <div class="nav-row">
+        <button class="ghost-btn" onclick="navigateToHome()">回首页</button>
+        <button class="ghost-btn" onclick="openModelProfile()">看模型档案</button>
+      </div>
+    </div>
+  </div>`;
 }
 
 // Leaderboard
@@ -2765,6 +3449,10 @@ buildGroups();
 buildTeams('all');
 buildBracket();
 buildKnockoutLive();
+renderModelProfileView();
+renderSubscribeView();
+window.addEventListener('hashchange', renderRoute);
+renderRoute();
 // dev: ?backtest=1 自动跑回测（Sprint 6.1 算法校准工具，6/17 加）
 if (location.search.includes('backtest=1')) {
 setTimeout(() => backtest(), 100);
