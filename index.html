@@ -637,10 +637,10 @@ nav{justify-content:center}
 
 <!-- Bracket -->
 <div id="bracket" class="section">
-<h2 style="font-size:1.3rem;margin-bottom:20px">🏆 淘汰赛对阵图 <span style="color:var(--muted);font-size:.9rem">(姬的预测路径)</span></h2>
-<p style="color:var(--muted);margin-bottom:20px;font-size:.85rem">基于AI预测的小组赛结果自动生成的淘汰赛路径</p>
+<h2 style="font-size:1.3rem;margin-bottom:20px">🏆 淘汰赛对阵图 <span style="color:var(--muted);font-size:.9rem">(真实 8 强对阵 + AI 后续预测)</span></h2>
+<p style="color:var(--muted);margin-bottom:20px;font-size:.85rem">已经打完的 1/8 决赛用真实结果，8 强开始按真实对阵衔接；半决赛与决赛继续由 AI 预测路径往后推。</p>
 <div style="margin-bottom:18px;padding:16px;background:rgba(252,231,243,.7);border:1px solid var(--border);border-radius:12px">
-<h3 style="margin:0 0 10px;font-size:1rem">📌 真实淘汰赛进度 <span style="color:var(--muted);font-size:.78rem;font-weight:400">(截至 2026-07-07，今日两场待赛)</span></h3>
+<h3 style="margin:0 0 10px;font-size:1rem">📌 真实淘汰赛进度 <span style="color:var(--muted);font-size:.78rem;font-weight:400">(截至 2026-07-08，1/8 决赛 8 场已全部结束)</span></h3>
 <div id="knockout-live"></div>
 </div>
 <div class="bracket-container">
@@ -2032,19 +2032,7 @@ modal.classList.add('show');
 // Bracket
 function buildBracket() {
 const container = document.getElementById('bracket-content');
-// 确定性出线：每组按队伍实力排序，前 2 名 + 12 个第三名里实力最强的 8 个
-const qualified = [];
-const allThirds = [];
-Object.entries(GROUPS).forEach(([g, teams]) => {
-const scored = teams.map(t => ({name: t, str: getTeamStrength(t)}));
-scored.sort((a,b) => b.str - a.str);
-qualified.push(scored[0].name, scored[1].name);
-allThirds.push(scored[2]);
-});
-allThirds.sort((a,b) => b.str - a.str);
-allThirds.slice(0,8).forEach(t => qualified.push(t.name));
-
-// AI 预测胜负：用 predictMatch 的 winProb（与小组赛同一引擎）。胜率相同时 FIFA rank 小者胜
+// 8 强开始改用真实 1/8 决赛结果衔接，后续轮次继续按 AI 预测路径向后推
 function pickWinner(a, b) {
 const p = predictMatch(a, b, '淘汰赛');
 if (!p) return TEAMS[a].rank <= TEAMS[b].rank ? a : b;
@@ -2053,19 +2041,26 @@ if (pa !== pb) return pa > pb ? a : b;
 return TEAMS[a].rank <= TEAMS[b].rank ? a : b;
 }
 
-// Round of 32
-const r32 = [];
-for (let i = 0; i < qualified.length; i += 2) {
-r32.push([qualified[i], qualified[i+1] || qualified[0]]);
+function actualWinnerFromMatch(m) {
+if (m.winner) return m.winner === 'A' ? m.a : m.b;
+const [ga, gb] = m.score.split('-').map(Number);
+if (ga > gb) return m.a;
+if (gb > ga) return m.b;
+return m.a;
 }
 
-const r16 = r32.map(([a,b]) => pickWinner(a,b));
-const r16Pairs = [];
-for (let i = 0; i < r16.length; i += 2) r16Pairs.push([r16[i], r16[i+1]]);
+const actualR16 = KNOCKOUT_STATUS.completed.map(m => ({
+...m,
+winnerName: actualWinnerFromMatch(m),
+displayScore: m.shootout ? `${m.score}（点球${m.shootout}）` : m.score
+}));
 
-const qf = r16Pairs.map(([a,b]) => pickWinner(a,b));
-const qfPairs = [];
-for (let i = 0; i < qf.length; i += 2) qfPairs.push([qf[i], qf[i+1]]);
+const qfPairs = [
+[actualR16[0].winnerName, actualR16[1].winnerName],
+[actualR16[2].winnerName, actualR16[3].winnerName],
+[actualR16[4].winnerName, actualR16[5].winnerName],
+[actualR16[6].winnerName, actualR16[7].winnerName]
+];
 
 const sf = qfPairs.map(([a,b]) => pickWinner(a,b));
 const sfPairs = [];
@@ -2090,6 +2085,21 @@ return `<div class="bracket-match">
 <div class="bracket-team ${bWin?'winner':'loser'}">
   <span class="team-name">${flagHTML(b)} ${b}${bWin?'<span class="check">✓</span>':''}</span>
   <span class="team-prob">${p.probB}%</span>
+</div>
+</div>`;
+}
+
+function actualMatchHTML(m) {
+return `<div class="bracket-match">
+<div class="bracket-team ${m.winnerName === m.a ? 'winner':'loser'}">
+  <span class="team-name">${flagHTML(m.a)} ${m.a}${m.winnerName === m.a ? '<span class="check">✓</span>':''}</span>
+</div>
+<div class="bracket-vs">
+  <span class="pred-score">${m.displayScore}</span>
+  <span class="draw-prob">${m.shootout ? '点球 '+m.shootout : '真实赛果'}</span>
+</div>
+<div class="bracket-team ${m.winnerName === m.b ? 'winner':'loser'}">
+  <span class="team-name">${flagHTML(m.b)} ${m.b}${m.winnerName === m.b ? '<span class="check">✓</span>':''}</span>
 </div>
 </div>`;
 }
@@ -2369,8 +2379,9 @@ const bracketHtml = `
 截至 2026-07-08（北京时间），8 场 1/8 决赛已全部补入；阿根廷 3 比 2 埃及完成逆转，瑞士 0 比 0 哥伦比亚后通过点球 4 比 3 晋级。
 </div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px">${doneCards}</div>
-<div style="margin-top:12px;font-size:.8rem;color:var(--gold);font-weight:700">今夜待赛</div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-top:8px">${pendingCards}</div>`;
+${pending.length ? `<div style="margin-top:12px;font-size:.8rem;color:var(--gold);font-weight:700">今夜待赛</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-top:8px">${pendingCards}</div>` : `<div style="margin-top:12px;font-size:.8rem;color:var(--gold);font-weight:700">8 强对阵已形成</div>
+<div style="margin-top:8px;font-size:.76rem;color:var(--muted);line-height:1.7">摩洛哥 vs 法国、英格兰 vs 挪威、西班牙 vs 比利时、阿根廷 vs 瑞士。下方对阵图已按真实 8 强顺序衔接。</div>`}`;
 const dashboardContainer = document.getElementById('dashboard-knockout-live');
 if (dashboardContainer) dashboardContainer.innerHTML = dashboardHtml;
 const bracketContainer = document.getElementById('knockout-live');
@@ -2382,23 +2393,19 @@ const champProb = !finalPred ? 50 : (champion === finalists[0] ? finalPred.teamA
 
 container.innerHTML = `
 <div class="bracket-round">
-<h3>32强</h3>
-${r32.slice(0,16).map(([a,b]) => matchHTML(a,b,pickWinner(a,b))).join('')}
+<h3>1/8决赛（真实）</h3>
+${actualR16.map(m => actualMatchHTML(m)).join('')}
 </div>
 <div class="bracket-round">
-<h3>16强</h3>
-${r16Pairs.map(([a,b]) => matchHTML(a,b, pickWinner(a,b))).join('')}
-</div>
-<div class="bracket-round">
-<h3>8强</h3>
+<h3>8强（真实对阵）</h3>
 ${qfPairs.map(([a,b]) => matchHTML(a,b, pickWinner(a,b))).join('')}
 </div>
 <div class="bracket-round">
-<h3>半决赛</h3>
+<h3>半决赛（AI）</h3>
 ${sfPairs.map(([a,b]) => matchHTML(a,b, pickWinner(a,b))).join('')}
 </div>
 <div class="bracket-round">
-<h3>决赛</h3>
+<h3>决赛（AI）</h3>
 ${matchHTML(finalists[0], finalists[1], champion)}
 <div class="champion-card">
 <div class="champion-trophy">🏆</div>
